@@ -1,0 +1,71 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://layering method/Random.gd" type="Script" id=1]
+[ext_resource path="res://layering method/SaveSystem2.gd" type="Script" id=2]
+[ext_resource path="res://layering method/Load.gd" type="Script" id=3]
+[ext_resource path="res://layering method/Save.gd" type="Script" id=4]
+[ext_resource path="res://layering method/Previous.gd" type="Script" id=5]
+[ext_resource path="res://icon.png" type="Texture" id=6]
+[ext_resource path="res://layering method/Godot.gd" type="Script" id=7]
+
+[node name="SaveGame" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="Godot" type="Sprite" parent="."]
+position = Vector2( 95.3517, 326.315 )
+texture = ExtResource( 6 )
+script = ExtResource( 7 )
+
+[node name="Control" type="Control" parent="."]
+margin_right = 1026.0
+margin_bottom = 600.0
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Random" type="Button" parent="Control"]
+margin_left = 21.1893
+margin_top = 536.089
+margin_right = 221.189
+margin_bottom = 581.089
+text = "Random"
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Save" type="Button" parent="Control"]
+margin_left = 278.639
+margin_top = 537.148
+margin_right = 478.639
+margin_bottom = 582.148
+text = "Save"
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Load" type="Button" parent="Control"]
+margin_left = 538.208
+margin_top = 538.208
+margin_right = 738.208
+margin_bottom = 583.208
+text = "Load"
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Previous" type="Button" parent="Control"]
+margin_left = 795.657
+margin_top = 538.207
+margin_right = 995.657
+margin_bottom = 583.207
+text = "Previous"
+script = ExtResource( 5 )
+
+[connection signal="pressed" from="Control/Random" to="Control/Random" method="_on_Random_pressed"]
+[connection signal="pressed" from="Control/Save" to="Control/Save" method="_on_Save_pressed"]
+[connection signal="pressed" from="Control/Load" to="Control/Load" method="_on_Load_pressed"]
+[connection signal="pressed" from="Control/Previous" to="Control/Previous" method="_on_Previous_pressed"]
